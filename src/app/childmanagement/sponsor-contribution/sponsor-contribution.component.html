@@ -1,0 +1,48 @@
+<h2 mat-dialog-title>Sponsor Contribution</h2>
+
+<mat-divider></mat-divider>
+<br>
+
+<div class="card">
+    <div class="card-header">
+        <strong>{{ title }}</strong>
+    </div>
+    <div class="card-body">
+        <form [formGroup]="form">
+            <div class="form-group row">
+                <div class="col-md-4">
+                    <mat-form-field class="col-md-12">
+                        <input matInput id="Amount" placeholder="Amount" formControlName="amount" name="Amount"
+                            required>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-md-4">
+                    <mat-form-field class="col-md-12">
+                        <input matInput placeholder="Contribution Date" (click)="dateOfContributionDatepicker.open()"
+                            [matDatepicker]="dateOfContributionDatepicker" [max]="maxDate"
+                            formControlName="contributionDate" required>
+                        <mat-datepicker-toggle matSuffix [for]="dateOfContributionDatepicker"></mat-datepicker-toggle>
+                        <mat-datepicker #dateOfContributionDatepicker name="contributionDate"></mat-datepicker>
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-sm btn-primary" (click)="saveContribution()">
+                            <strong><i class="fa fa-dot-circle-o"></i>Submit</strong>
+                        </button>
+
+                        <button type="submit" class="btn btn-sm btn-secondary" (click)="close()">
+                            <strong><i class="fa fa-dot-circle-o"></i>Close</strong>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

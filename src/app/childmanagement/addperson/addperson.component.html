@@ -1,0 +1,78 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <strong>{{ title }}</strong>
+            </div>
+            <div class="card-body">
+                <form [formGroup]="form">
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <mat-form-field class="col-md-12">
+                                <input matInput id="firstName" placeholder="First Name" formControlName="firstName"
+                                    name="firstName" required>
+                            </mat-form-field>
+                        </div>
+
+                        <div class="col-md-4">
+                            <mat-form-field class="col-md-12">
+                                <input matInput id="middleName" placeholder="Middle Name" formControlName="middleName"
+                                    name="middleName">
+                            </mat-form-field>
+                        </div>
+
+                        <div class="col-md-4">
+                            <mat-form-field class="col-md-12">
+                                <input matInput id="lastName" placeholder="Last Name" formControlName="lastName"
+                                    name="lastName" required>
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
+                        <div class="col-md-4">
+                            <mat-form-field class="col-md-12">
+                                <input matInput placeholder="Date of Birth" (click)="dobDatepicker.open()"
+                                    [matDatepicker]="dobDatepicker" [max]="maxDate" formControlName="dob" required>
+                                <mat-datepicker-toggle matSuffix [for]="dobDatepicker"></mat-datepicker-toggle>
+                                <mat-datepicker #dobDatepicker name="dob"></mat-datepicker>
+                            </mat-form-field>
+                        </div>
+
+                        <div class="col-md-4">
+                            <mat-form-field class="col-md-12">
+                                <input matInput placeholder="Registration Date" (click)="registrationDatepicker.open()"
+                                    [matDatepicker]="registrationDatepicker" [max]="maxDate"
+                                    formControlName="registrationDate" required>
+                                <mat-datepicker-toggle matSuffix [for]="registrationDatepicker"></mat-datepicker-toggle>
+                                <mat-datepicker #registrationDatepicker name="registrationDate"></mat-datepicker>
+                            </mat-form-field>
+                        </div>
+
+                        <div class="col-md-4">
+                            <mat-form-field class="col-md-12">
+                                <mat-select placeholder="Sex" name="sex" id="sex" required formControlName="sex"
+                                    required>
+                                    <mat-option value=""></mat-option>
+                                    <mat-option *ngFor="let gender of genderList" [value]="gender.id">
+                                        {{gender.name}}</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-sm btn-primary" (click)="savePerson()">
+                                    <strong><i class="fa fa-dot-circle-o"></i>Submit</strong>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/.row-->

@@ -1,0 +1,35 @@
+import { Injectable } from '@angular/core';
+import { SnotifyPosition, SnotifyService, SnotifyToastConfig } from 'ng-snotify';
+
+@Injectable({
+    providedIn: 'root'
+})
+export class NotificationService {
+
+    timeout = 3000;
+    position: SnotifyPosition = SnotifyPosition.centerCenter;
+    progressBar = false;
+    closeClick = true;
+    newTop = true;
+
+    constructor(private snotifyService: SnotifyService) { }
+
+    /*
+        Change global configuration
+    */
+
+    getConfig(): SnotifyToastConfig {
+        this.snotifyService.setDefaults({
+            global: {
+                newOnTop: this.newTop,
+            }
+        });
+
+        return {
+            position: this.position,
+            timeout: this.timeout,
+            showProgressBar: this.progressBar,
+            closeOnClick: this.closeClick,
+        };
+    }
+}

@@ -1,0 +1,59 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <strong>{{ title }}</strong>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label class="col-md-6"><strong>First Name</strong></label>
+                        <div class="col-md-6">
+                            <span>{{ firstName }}</span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label class="col-md-6"><strong>Middle Name</strong></label>
+                        <div class="col-md-6">
+                            <span>{{ middleName }}</span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label class="col-md-6"><strong>Last Name</strong></label>
+                        <div class="col-md-6">
+                            <span>{{ lastName }}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <hr />
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <label class="col-md-6"><strong>Sex</strong></label>
+                        <div class="col-md-6">
+                            <span>{{ sex }}</span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label class="col-md-6"><strong>Registration Date</strong></label>
+                        <div class="col-md-6">
+                            <span>{{ registrationDate | date: 'dd-MMM-yyyy' }}</span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label class="col-md-6"><strong>Date Of Birth</strong></label>
+                        <div class="col-md-6">
+                            <span>{{ dob | date: 'dd-MMM-yyyy' }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--/.row-->
